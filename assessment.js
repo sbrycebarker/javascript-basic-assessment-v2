@@ -1,37 +1,53 @@
 // #1 Create a var called 'up' that says 'down'
+ var up = "down"
 
 
-
-// #2 Use the var iHeart to create a new var called iHeartJavascript that says 'I heart javascript'
+// // #2 Use the var iHeart to create a new var called iHeartJavascript that says 'I heart javascript'
 var iHeart = 'I heart';
-
+var iHeartJavascript = iHeart;
+iHeartJavascript = 'I heart javascript'
 // #3  Make an object called developer
-// developer has a title of Junior (String)
-// developer has a salary of 55000 (Number)
-// developer has a laptop, that has type Macbook, and year 2016 (object)
-// developer is not billGates (boolean)
-// developer likes isolation, caffeine, and pizza (array of strings)
 
-
-// #4 Change my dog's name to Fido using dot notation
+	var developer = {
+		title: 'junior',
+		salary: 55000,
+		laptop: {
+			type: 'Macbook',
+			year: 2016
+		},
+		billGates: false,
+		likes:  ["isolation", "caffeine", "pizza"],
+	}
+// // developer has a title of Junior (String)
+// // developer has a salary of 55000 (Number)
+// // developer has a laptop, that has type Macbook, and year 2016 (object)
+// // developer is not billGates (boolean)
+// // developer likes isolation, caffeine, and pizza (array of strings)
+//
+//
+// // #4 Change my dog's name to Fido using dot notation
 var myDog = {
 	type: 'beagle',
 	name: 'Spot'
 };
-
-// Change my don't type to hairless using square bracket notation
+//
+//
+//
+// // Change my don't type to hairless using square bracket notation
 var myOtherDog = {
 	type: 'poodle',
 	name: 'Fluffy'
 };
-
-// #5 Create an object that tracks a count of kids in each grade in a school.  Call it 'school'
-// The key should be the grade (string) and the value should be how many kids there are.
-// Our school has 50 kids in first, 30 kids in second and 80 kids in third
-
-
-
-// #6 Loop through this object and change every property that begins with the word 'secret' to have a value of 'redacted'
+//
+//
+// // #5 Create an object that tracks a count of kids in each grade in a school.  Call it 'school'
+// // The key should be the grade (string) and the value should be how many kids there are.
+// // Our school has 50 kids in first, 30 kids in second and 80 kids in third
+//
+//
+//
+//
+// // #6 Loop through this object and change every property that begins with the word 'secret' to have a value of 'redacted'
 var briefing = {
 	secretLocation: 'antarctica',
   secretWeapon: 'hands',
@@ -42,40 +58,80 @@ var briefing = {
 
 
 // #7 Create an array of strings that are the 7 days of the week. Call your array daysOfWeek
+var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
 
 // #8 Using this array do the following
 var jedi = ['Yoda', 'Mace Windu', 'Obi-Wan'];
 // add 'Luke' to the end
+function adder(a) {
+jedi.push(a)}
 
+adder("Luke");
+
+console.log(jedi)
 // remove 'Yoda' and store him in a var called firstJedi
+function green(){
+firstJedi = jedi.shift()
+
+}
+green();
+
+console.log(firstJedi)
 
 // add 'Mario' to the start of the array
-
+jedi.splice(0, 0, "mario")
 // remove 'Obi-Wan' from the array and store him in a var called secondJedi
 
+
+function obi() {
+var secondJedi = jedi.splice(2, 1)
+console.log(secondJedi)
+}
+obi();
 // leave 'Mace Windu' in the array but put a copy of him on a var called thirdJedi
+function mace(){
+var thirdJedi = jedi.slice(1,2)
+return thirdJedi
+}
 
-
+mace();
 
 
 // #9 Write a function called cutInLine, that takes in an array and an item, and adds the item
 // after the first item in the array and return the array
 // EX: cutInLine([1,2,3,4], 8) => [1,8,2,3,4];
+function cutInLine(array, item) {
+	array.splice(1,0, item)
+	return array
 
+}
 
 // #10 Write a function called removeThings, that takes in an array of things (strings or numbers), and a 'thing' (a string or a number).
 // Removes all instances of that 'thing' from the array. And return the modified array.
 // The order of the array should not be changed
 // removeThings(['a', 1, 4, 'a'], 'a') => [1,4]
 
+// function removeThings(array, thing) {
+// 	for ( var i = 0; i < array.length; i++) {
+// 		if ( array[i] = thing) {
+// 			array.splice([i], 1)
+// 		}
+// 	}
+// }
+
 
 // #11 Write a function tripleTheFun that takes 1 parameter: a number or a string. It triples numbers, and
 // repeats strings. Example: 4->12, 2.5->7.5, 'Awesome'->'AwesomeAwesomeAwesome'
 
 
+
+
 // #12 Write function getPropertyValue that takes in an object, and the name of a property on the object as a string
 // return the value from the object that corresponds to the property
-
+function getPropertyValue(object, name) {
+	return object.value(name)
+}
 // #13 Write a function called clockIn that takes in an employee and department name
 // and returns an object with a name, department, and timestamp which is
 // the current time as a Date object
